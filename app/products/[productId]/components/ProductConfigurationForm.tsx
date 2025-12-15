@@ -48,7 +48,7 @@ export function ProductConfigurationForm() {
 
       <Button type="button" variant={"outline"} onClick={() => setIsCustomQuantity((v) => !v)}>
         <span className="body2 text-primary-500 font-bold!">
-          {isCustomQuantity ? "Use slider" : "Enter custom quantity"}
+          {isCustomQuantity ? "Select from the range" : "Enter custom quantity"}
         </span>
       </Button>
       <SubscriptionPeriodField name="subscriptionPeriodId" periods={SUBSCRIPTION_PERIODS} />
