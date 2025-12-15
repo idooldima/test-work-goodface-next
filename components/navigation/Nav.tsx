@@ -1,3 +1,4 @@
+import { Icon } from "@iconify/react";
 import { Button } from "../ui/Button";
 import { groupNavByType } from "./groupByType";
 import { NAV_ROUTES } from "./routes";
@@ -33,8 +34,9 @@ export function Nav() {
                     href={item.href}
                     className="hover:text-primary-500 hover:bg-primary-50 text-grey-800 flex items-center gap-3 rounded-[lg] px-4 py-1"
                   >
-                    {/* {item.icon && <Icon icon={item.icon} />} */}
+                    {item.icon && <Icon icon={item.icon} className="h-4 w-4" />}
                     <span className="subtitle2">{item.title}</span>
+                    {item.endIcon && <Icon icon={item.endIcon} className="ml-auto h-5 w-5" />}
                   </a>
                 </li>
               ))}

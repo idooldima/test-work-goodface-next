@@ -106,6 +106,7 @@ export const NAV_ROUTES: NavItem[] = [
     href: "/billing",
     icon: "mdi:credit-card-outline",
     visible: true,
+    endIcon: "mdi:menu-right",
   },
   {
     id: "help",
@@ -114,5 +115,6 @@ export const NAV_ROUTES: NavItem[] = [
     href: "/help",
     icon: "mdi:help-circle-outline",
     visible: true,
+    endIcon: "mdi:menu-right",
   },
 ];

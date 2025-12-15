@@ -17,6 +17,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "1",
     title: "Datacenter Proxies",
+    icon: "mdi:server-network",
     description:
       "High-speed, reliable proxies sourced from data centers, ideal for managing high-volume, concurrent requests.",
     pricing: {
@@ -33,6 +34,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "2",
     title: "Residential Proxies",
+    icon: "mdi:network-outline",
     description: "Real residential IPs with high trust score.",
     pricing: {
       basePrice: 5,

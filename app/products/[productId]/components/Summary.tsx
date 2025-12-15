@@ -7,6 +7,7 @@ import { Product } from "../../data/products.mock";
 import { getPricePerIp } from "@/helpers/getPricePerIp";
 import { ContentBox } from "@/components/common/ContentBox";
 import { BaseInput } from "@/components/ui/input";
+import { Icon } from "@iconify/react";
 
 export function Summary({ product }: { product: Product }) {
   const { watch } = useFormContext<ProductFormValues>();
@@ -23,33 +24,38 @@ export function Summary({ product }: { product: Product }) {
   return (
     <div className="h-fit! w-full lg:sticky lg:top-6 lg:w-90 lg:shrink-0">
       <ContentWrapper className="mb-4 w-full">
-        <ContentBox className="mb-4">
+        <ContentBox className="mb-4!">
           <h5>Order summary</h5>
         </ContentBox>
-        <ContentBox className="mb-4 flex flex-col gap-2">
+        <ContentBox className="mb-4! flex flex-col gap-2">
           <div className="mb-2 flex flex-col gap-2">
-            <p className="font-medium">{product.title}</p>
-            <small className="text-grey-600 font-medium">3-day Trial</small>
-            <small className="text-grey-600 font-medium">Customer Success Manager</small>
+            <p className="font-medium!">{product.title}</p>
+            <span className="text-grey-600 subtitle2 flex items-center gap-1 font-medium">
+              <Icon icon="mdi:check-circle" className="size-5 text-green-500" /> 3-day Trial
+            </span>
+            <span className="text-grey-600 subtitle2 flex items-center gap-1 font-medium">
+              <Icon icon="mdi:check-circle" className="size-5 text-green-500" /> Customer Success
+              Manager
+            </span>
           </div>
           <div className="flex justify-between">
-            <small className="text-grey-600 font-medium">Quantity of IP</small>
+            <span className="text-grey-600 subtitle2 font-medium">Quantity of IP</span>
             <span className="subtitle2">{quantity} IPs</span>
           </div>
           <div className="flex justify-between">
-            <small className="text-grey-600 font-medium">Location</small>
+            <span className="text-grey-600 subtitle2 font-medium">Location</span>
             <span className="subtitle2">{country?.label}</span>
           </div>
           <div className="flex justify-between">
-            <small className="text-grey-600 font-medium">Price per IP</small>
+            <span className="text-grey-600 subtitle2 font-medium">Price per IP</span>
             <span className="subtitle2">${pricePerIp.toFixed(2)}</span>
           </div>
           <div className="flex justify-between">
-            <small className="text-grey-600 font-medium">Subscription period</small>
+            <span className="text-grey-600 subtitle2 font-medium">Subscription period</span>
             <span className="subtitle2">{period?.label}</span>
           </div>
         </ContentBox>
-        <ContentBox className="mb-4 flex gap-2">
+        <ContentBox className="mb-4! flex gap-2">
           <BaseInput className="h-7" />{" "}
           <Button size={"sm"} variant={"outline"}>
             Apply
@@ -62,7 +68,7 @@ export function Summary({ product }: { product: Product }) {
         </div>
       </ContentWrapper>
 
-      <Button size={"lg"} type="submit" className={"text-md w-full"} variant={"primary"}>
+      <Button size={"lg"} type="submit" className={"text-md mb-4 w-full"} variant={"primary"}>
         Continue to checkout
       </Button>
       <WalletSection />
@@ -71,5 +77,23 @@ export function Summary({ product }: { product: Product }) {
 }
 
 export function WalletSection() {
-  return <div>items in wallet</div>;
+  return (
+    <div className="flex justify-center gap-2">
+      <div>
+        <Icon icon="mdi:card-bulleted-outline" className="text-muted-foreground size-6" />
+      </div>
+      <div>
+        <Icon icon="mdi:card-bulleted-outline" className="text-muted-foreground size-6" />
+      </div>
+      <div>
+        <Icon icon="mdi:card-bulleted-outline" className="text-muted-foreground size-6" />
+      </div>
+      <div>
+        <Icon icon="mdi:card-bulleted-outline" className="text-muted-foreground size-6" />
+      </div>
+      <div>
+        <Icon icon="mdi:card-bulleted-outline" className="text-muted-foreground size-6" />
+      </div>
+    </div>
+  );
 }

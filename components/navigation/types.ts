@@ -13,5 +13,6 @@ export interface NavItem {
   title: string;
   href: string;
   icon?: string;
+  endIcon?: string;
   visible: boolean;
 }

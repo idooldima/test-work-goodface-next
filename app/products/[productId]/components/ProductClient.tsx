@@ -27,17 +27,17 @@ export function ProductClient({ product }: { product: Product }) {
 
   return (
     <Form {...form}>
-      <div className="flex min-h-screen justify-center">
+      <div className="lg:flex-rowjustify-center flex min-h-screen flex-col">
         <div className="flex w-full flex-col gap-6 lg:flex-row">
           <ContentWrapper className="h-fit! flex-1">
             <ProductHeader
               title={product.title}
               description={product.description}
-              icon={<div className="bg-muted h-16 w-16 rounded-md" />}
+              icon={product.icon}
             />
 
             <ContentBox>
-              <span className="subtitle2 text-bold">Select number of IPs</span>
+              <span className="subtitle2 font-bold!">Select number of IPs</span>
               <p className="subtitle2 text-grey-500">
                 Choose the perfect quantity of IPs for your needs effortlessly
               </p>

@@ -1,3 +1,4 @@
+import { Icon } from "@iconify/react";
 import { Nav } from "../navigation/Nav";
 import { Button } from "../ui/Button";
 import Header from "../ui/Header";
@@ -17,7 +18,7 @@ export function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
         <Header />
         <SideBarContainer>
           <Button size={"sm"} variant="outline" className="text-[13px]">
-            + Buy new Proxies
+            <Icon icon={"mdi:plus"} /> Buy new Proxies
           </Button>
 
           <Nav />
