@@ -53,16 +53,16 @@
   --color-orange-900: rgb(67 20 7);
 
   /* Green */
-  --color-green-50: rgb(236 253 245);
-  --color-green-100: rgb(209 250 229);
-  --color-green-200: rgb(167 243 208);
-  --color-green-300: rgb(110 231 183);
-  --color-green-400: rgb(52 211 153);
-  --color-green-500: rgb(16 185 129);
-  --color-green-600: rgb(5 150 105);
-  --color-green-700: rgb(4 120 87);
-  --color-green-800: rgb(6 95 70);
-  --color-green-900: rgb(6 78 59);
+  --color-green-50: rgb(233, 249, 239);
+  --color-green-100: rgb(186, 237, 205);
+  --color-green-200: rgb(153, 228, 181);
+  --color-green-300: rgb(107, 216, 147);
+  --color-green-400: rgb(78, 209, 126);
+  --color-green-500: rgb(34, 197, 94);
+  --color-green-600: rgb(31, 179, 86);
+  --color-green-700: rgb(24, 140, 67);
+  --color-green-800: rgb(19, 108, 52);
+  --color-green-900: rgb(14, 83, 39);
 
   /* Blue */
   --color-blue-50: rgb(239 246 255);

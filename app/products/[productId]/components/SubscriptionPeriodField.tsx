@@ -1,5 +1,6 @@
 "use client";
 
+import { Badge } from "@/components/ui/badge";
 import { FormField, FormItem, FormLabel, FormControl } from "@/components/ui/form";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
@@ -20,14 +21,13 @@ export function SubscriptionPeriodField({ name, periods }: Props) {
     <FormField
       name={name}
       render={({ field }) => (
-        <FormItem className="space-y-3">
-          <FormLabel>Select subscription cycle</FormLabel>
+        <FormItem>
+          <FormLabel className="subtitle2">Select subscription cycle</FormLabel>
 
           <FormControl>
             <RadioGroup
               value={String(field.value)}
               onValueChange={(value) => field.onChange(Number(value))}
-              className="space-y-2"
             >
               {periods.map((period) => {
                 const isSelected = field.value === period.id;
@@ -35,18 +35,14 @@ export function SubscriptionPeriodField({ name, periods }: Props) {
                 return (
                   <label
                     key={period.id}
-                    className={`flex cursor-pointer items-center justify-between rounded-md border px-4 py-3 transition ${isSelected ? "ring-primary ring-2" : ""} `}
+                    className={`border-grey-300 flex cursor-pointer items-center gap-2 rounded-[4px] border px-4 py-3 transition ${isSelected ? "ring-primary-500 bg-primary-50 ring-2" : ""} `}
                   >
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2">
                       <RadioGroupItem value={String(period.id)} />
                       <span>{period.label}</span>
                     </div>
 
-                    {period.sale && (
-                      <span className="rounded-md px-2 py-1 text-xs font-medium">
-                        Save {period.sale}%
-                      </span>
-                    )}
+                    {period.sale && <Badge variant={"secondary"}>Save {period.sale}%</Badge>}
                   </label>
                 );
               })}

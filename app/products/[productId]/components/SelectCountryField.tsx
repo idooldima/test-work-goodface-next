@@ -26,14 +26,14 @@ export function SelectCountryField({ name, options }: Props) {
       name={name}
       render={({ field }) => (
         <FormItem>
-          <FormLabel>Select location</FormLabel>
+          <FormLabel className="subtitle2">Select location</FormLabel>
 
           <FormControl>
             <Select
               value={field.value ? String(field.value) : undefined}
               onValueChange={(value) => field.onChange(Number(value))}
             >
-              <SelectTrigger className="w-full">
+              <SelectTrigger className="w-full cursor-pointer">
                 <SelectValue placeholder="Select location" />
               </SelectTrigger>
 
