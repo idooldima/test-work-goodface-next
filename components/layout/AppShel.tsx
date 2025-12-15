@@ -8,7 +8,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
-    <div className="min-h-screebn w-full bg-[#FAFAFA]">
+    <div className="min-h-screen w-full bg-[#FAFAFA]">
       <div className="lg:hidden">
         <Header showBurger onMenuClick={() => setIsSidebarOpen(true)} />
       </div>
