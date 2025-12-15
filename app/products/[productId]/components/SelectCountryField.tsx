@@ -1,0 +1,53 @@
+"use client";
+
+import { FormField, FormItem, FormLabel, FormControl } from "@/components/ui/form";
+
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from "@/components/ui/select";
+
+type Option = {
+  id: number;
+  label: string;
+};
+
+type Props = {
+  name: string;
+  options: Option[];
+};
+
+export function SelectCountryField({ name, options }: Props) {
+  return (
+    <FormField
+      name={name}
+      render={({ field }) => (
+        <FormItem>
+          <FormLabel>Select location</FormLabel>
+
+          <FormControl>
+            <Select
+              value={field.value ? String(field.value) : undefined}
+              onValueChange={(value) => field.onChange(Number(value))}
+            >
+              <SelectTrigger className="w-full">
+                <SelectValue placeholder="Select location" />
+              </SelectTrigger>
+
+              <SelectContent>
+                {options.map((option) => (
+                  <SelectItem key={option.id} value={String(option.id)}>
+                    {option.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </FormControl>
+        </FormItem>
+      )}
+    />
+  );
+}
