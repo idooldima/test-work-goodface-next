@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/Button";
 import { ProductFormValues } from "./ProductClient";
 import { Product } from "../../data/products.mock";
 import { getPricePerIp } from "@/helpers/getPricePerIp";
+import { ContentBox } from "@/components/common/ContentBox";
+import { BaseInput } from "@/components/ui/input";
 
 export function Summary({ product }: { product: Product }) {
   const { watch } = useFormContext<ProductFormValues>();
@@ -20,16 +22,47 @@ export function Summary({ product }: { product: Product }) {
 
   return (
     <div className="h-fit! w-full lg:sticky lg:top-6 lg:w-90 lg:shrink-0">
-      <ContentWrapper className="w-full">
-        <div>
-          <strong>Price per IP:</strong> ${pricePerIp.toFixed(2)}
-          <strong>Quantity:</strong> {quantity}
-          <strong>SubscriptionPeriod:</strong> {period?.label}
-          <strong>country:</strong> {country?.label}
-          <strong>Total:</strong> ${(pricePerIp * quantity).toFixed(2)}
+      <ContentWrapper className="mb-4 w-full">
+        <ContentBox className="mb-4">
+          <h5>Order summary</h5>
+        </ContentBox>
+        <ContentBox className="mb-4 flex flex-col gap-2">
+          <div className="mb-2 flex flex-col gap-2">
+            <p className="font-medium">{product.title}</p>
+            <small className="text-grey-600 font-medium">3-day Trial</small>
+            <small className="text-grey-600 font-medium">Customer Success Manager</small>
+          </div>
+          <div className="flex justify-between">
+            <small className="text-grey-600 font-medium">Quantity of IP</small>
+            <span className="subtitle2">{quantity} IPs</span>
+          </div>
+          <div className="flex justify-between">
+            <small className="text-grey-600 font-medium">Location</small>
+            <span className="subtitle2">{country?.label}</span>
+          </div>
+          <div className="flex justify-between">
+            <small className="text-grey-600 font-medium">Price per IP</small>
+            <span className="subtitle2">${pricePerIp.toFixed(2)}</span>
+          </div>
+          <div className="flex justify-between">
+            <small className="text-grey-600 font-medium">Subscription period</small>
+            <span className="subtitle2">{period?.label}</span>
+          </div>
+        </ContentBox>
+        <ContentBox className="mb-4 flex gap-2">
+          <BaseInput className="h-7" />{" "}
+          <Button size={"sm"} variant={"outline"}>
+            Apply
+          </Button>
+        </ContentBox>
+        <div className="bg-grey-300 mb-6 h-px w-full" />
+        <div className="flex justify-between">
+          <p className="font-medium">Total:</p>
+          <span className="text-[24px] font-medium">${(pricePerIp * quantity).toFixed(2)}</span>
         </div>
       </ContentWrapper>
-      <Button type="submit" className={"w-full"} variant={"primary"}>
+
+      <Button size={"lg"} type="submit" className={"text-md w-full"} variant={"primary"}>
         Continue to checkout
       </Button>
       <WalletSection />
