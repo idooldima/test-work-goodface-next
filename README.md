@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<!--
+ 1. Як би ви організували компоненти (структура, підхід до повторного використання)?
+- Я б виходив з принципу “розширення > модифікація”. Базові UI-компоненти мають мінімальний API і дефолтну поведінку. Компонент не повинен розростатись до 20–30 пропсів, якщо для нового кейсу треба міняти логіку.
+Структура компонентів повинна бути семантично очевидною, щоб нова людина за кілька днів розуміла де що знаходиться
 
-## Getting Started
+2.Як би реалізували роботу з API в масштабному проєкті?
+- Я б робив чітке розділення шарів
+    ключі запитів / ендпоїнтів, наприклад: const keys = {getAll: 'getAll', deleteUser: 'deleteUser}
+    http layer -  універсальний fetch / axios wrapper, головне створювати новы шаблони для авторизації, продуктів, тобто розділяти за логікою.
+    потім сам сервіс, який ми будемо викликати, наприклад ProductsService, або AuthService
 
-First, run the development server:
+3.Як масштабували б сторінки, функціональність, нові блоки?
+-Першочегорово це неймінг, неймінг повинен бути під структуру проекта. Друге - читабельність коду, якщо в тебе є вибір - зробити в одну строку "розумного" коду, або в 3-4, але зрозуміло, то треба робити в 3-4, бо це час команди + після деякого часу на проекті сам згадаєш шо там відбувалось. Тобто читаємість + неймінг + компонентний підхід = нормальний проект
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+4.Які основні ризики бачите у фронтенд-частині подібного проєкту?
+-Великі ризики на проектах для мене:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    а) Перевантаженість логіки
+    Коли бізнес-логіка поступово ускладнюється, але структура не змінюється, компоненти починають виконувати занадто багато відповідальностей, що ускладнює підтримку і розвиток.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+    б) Відхилення від стилю проєкту
+    Якщо хтось у команді відходить від прийнятих патернів і це не помічається одразу (code review, linting), з часом це призводить до фрагментованого коду та необхідності болісного рефакторингу.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+    в) Невідповідність типізації реальним даним
+    Типи, які не синхронізовані з бекендом або бізнес-логікою, створюють хибне відчуття безпеки і призводять до runtime-помилок.
 
-## Learn More
+    г) Термінові зміни з боку клієнта
+    Запити “на вчора”, які реалізуються без перегляду архітектури, найчастіше породжують технічний борг і напряму ведуть до появи всіх попередніх проблем.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+    Час на виконання
+    Старт структура: +-година
+    Додати шаблони сайдбару + контента: 1.5 години
+    Компоненти + форма: 3 години
+    Стилізація під фігму: 3 години
+    Разом: 8.5 годин
+-->

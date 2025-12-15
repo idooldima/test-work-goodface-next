@@ -11,7 +11,10 @@ export function DesktopTable({ tiers }: BundleDiscountsTableProps) {
               <th className="px-4 py-2 text-left font-medium">IPs</th>
 
               {tiers.map((tier, index) => (
-                <th key={index} className="px-4 py-2 text-center font-medium">
+                <th
+                  key={`${index} + ${tier.pricePerIp}`}
+                  className="px-4 py-2 text-center font-medium"
+                >
                   {formatDiscountsRange(tier)}
                 </th>
               ))}
@@ -23,7 +26,7 @@ export function DesktopTable({ tiers }: BundleDiscountsTableProps) {
               <td className="px-4 py-3 font-medium">Price per IP</td>
 
               {tiers.map((tier, index) => (
-                <td key={index} className="px-4 py-3 text-center">
+                <td key={`${index} + ${tier.pricePerIp}`} className="px-4 py-3 text-center">
                   ${tier.pricePerIp.toFixed(2)}
                 </td>
               ))}

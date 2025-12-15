@@ -1,0 +1,15 @@
+export enum RouteName {
+  DASHBOARD = "/dashboard",
+  OBSERVABILITY = "/observability",
+  LOGS = "/logs",
+  SERVICES_SUMMARY = "/services/summary",
+  SERVICES_PROXIES = "/services/proxies",
+  SETTINGS = "/settings",
+  PRODUCTS = "/products",
+  API_KEYS = "/developer/api-keys",
+  API_REQUESTS = "/developer/requests",
+  RESELLERS = "/affiliate/resellers",
+  AFFILIATE = "/affiliate",
+  BILLING = "/billing",
+  HELP = "/help",
+}

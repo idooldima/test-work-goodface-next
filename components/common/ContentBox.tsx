@@ -1,3 +1,5 @@
+import { cn } from "@/lib/utils";
+
 export function ContentBox({
   children,
   className,
@@ -5,9 +7,5 @@ export function ContentBox({
   children: React.ReactNode;
   className?: string;
 }) {
-  return (
-    <div className={`mb-6 h-full w-full bg-transparent ${className ? className : ""}`}>
-      {children}
-    </div>
-  );
+  return <div className={cn("mb-6 h-full w-full bg-transparent", className)}>{children}</div>;
 }

@@ -38,7 +38,7 @@ export function SidebarFooter() {
           <div className="text-muted-foreground text-sm">acc.name@gmail.com</div>
         </div>
 
-        <div>3</div>
+        <Icon icon="mdi:dots-vertical" className="h-6 w-6 cursor-pointer" />
       </div>
     </div>
   );

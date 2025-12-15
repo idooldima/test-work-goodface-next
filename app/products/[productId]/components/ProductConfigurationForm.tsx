@@ -27,10 +27,10 @@ export const SUBSCRIPTION_PERIODS = [
 ];
 
 export const LOCATION_OPTIONS = [
-  { id: 1, label: "United Kingdom" },
-  { id: 2, label: "United States" },
-  { id: 3, label: "Germany" },
-  { id: 4, label: "France" },
+  { id: 1, label: "United Kingdom", icon: "mdi:crown" },
+  { id: 2, label: "United States", icon: "mdi:food" },
+  { id: 3, label: "Ukraine", icon: "mdi:currency-uah" },
+  { id: 4, label: "France", icon: "mdi:france" },
 ];
 
 export function ProductConfigurationForm() {
@@ -38,13 +38,15 @@ export function ProductConfigurationForm() {
 
   return (
     <form className="space-y-6">
-      {isCustomQuantity ? (
-        <FormInput name="quantity" label="Quantity" placeholder="Enter quantity" />
-      ) : (
-        <QuantityField name="quantity" />
-      )}
+      <div className={isCustomQuantity ? "block" : "hidden"}>
+        <FormInput type="number" name="quantity" />
+      </div>
 
-      <Button variant={"outline"} onClick={() => setIsCustomQuantity((v) => !v)}>
+      <div className={!isCustomQuantity ? "block" : "hidden"}>
+        <QuantityField name="quantity" />
+      </div>
+
+      <Button type="button" variant={"outline"} onClick={() => setIsCustomQuantity((v) => !v)}>
         <span className="body2 text-primary-500 font-bold!">
           {isCustomQuantity ? "Use slider" : "Enter custom quantity"}
         </span>

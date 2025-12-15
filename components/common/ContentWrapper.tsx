@@ -1,6 +1,16 @@
-export function ContentWrapper({ children, className }: { children: React.ReactNode, className?: string; }) {
+import { cn } from "@/lib/utils";
+
+export function ContentWrapper({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <section className={`bg-white p-6 rounded-lg h-full w-full border border-grey-200 ${className ? className : ''}`}>
+    <section
+      className={cn("border-grey-200 h-full w-full rounded-lg border bg-white p-6", className)}
+    >
       {children}
     </section>
   );

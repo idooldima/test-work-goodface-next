@@ -9,10 +9,12 @@ import {
   SelectContent,
   SelectItem,
 } from "@/components/ui/select";
+import { Icon } from "@iconify/react";
 
 type Option = {
   id: number;
   label: string;
+  icon?: string;
 };
 
 type Props = {
@@ -40,6 +42,7 @@ export function SelectCountryField({ name, options }: Props) {
               <SelectContent>
                 {options.map((option) => (
                   <SelectItem key={option.id} value={String(option.id)}>
+                    <Icon icon={option.icon ?? ""} />
                     {option.label}
                   </SelectItem>
                 ))}

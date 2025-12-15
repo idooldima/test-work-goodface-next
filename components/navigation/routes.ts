@@ -1,21 +1,20 @@
 import { NavGroupType, NavItem } from "./types";
+import { RouteName } from "./routeNames";
 
 export const NAV_ROUTES: NavItem[] = [
   {
     id: "dashboard",
     type: NavGroupType.MAIN,
     title: "Dashboard",
-    href: "/dashboard",
+    href: RouteName.DASHBOARD,
     icon: "mdi:view-dashboard-outline",
     visible: true,
   },
-
-  // SYSTEM OVERVIEW
   {
     id: "observability",
     type: NavGroupType.SYSTEM,
     title: "Observability Overview",
-    href: "/observability",
+    href: RouteName.OBSERVABILITY,
     icon: "mdi:eye-outline",
     visible: true,
   },
@@ -23,17 +22,15 @@ export const NAV_ROUTES: NavItem[] = [
     id: "logs",
     type: NavGroupType.SYSTEM,
     title: "Live Log Monitor",
-    href: "/logs",
+    href: RouteName.LOGS,
     icon: "mdi:monitor-eye",
     visible: true,
   },
-
-  // MY SERVICES
   {
     id: "summary",
     type: NavGroupType.SERVICES,
     title: "Summary",
-    href: "/services/summary",
+    href: RouteName.SERVICES_SUMMARY,
     icon: "mdi:text-box-outline",
     visible: true,
   },
@@ -41,7 +38,7 @@ export const NAV_ROUTES: NavItem[] = [
     id: "proxy-list",
     type: NavGroupType.SERVICES,
     title: "Proxy List",
-    href: "/services/proxies",
+    href: RouteName.SERVICES_PROXIES,
     icon: "mdi:server",
     visible: true,
   },
@@ -49,7 +46,7 @@ export const NAV_ROUTES: NavItem[] = [
     id: "settings",
     type: NavGroupType.SERVICES,
     title: "User Settings",
-    href: "/settings",
+    href: RouteName.SETTINGS,
     icon: "mdi:cog-outline",
     visible: true,
   },
@@ -57,17 +54,15 @@ export const NAV_ROUTES: NavItem[] = [
     id: "products",
     type: NavGroupType.SERVICES,
     title: "All Products",
-    href: "/products",
+    href: RouteName.PRODUCTS,
     icon: "mdi:shopping-outline",
     visible: true,
   },
-
-  // DEVELOPER
   {
     id: "api-keys",
     type: NavGroupType.DEVELOPER,
     title: "API Keys",
-    href: "/developer/api-keys",
+    href: RouteName.API_KEYS,
     icon: "mdi:key-outline",
     visible: true,
   },
@@ -75,17 +70,15 @@ export const NAV_ROUTES: NavItem[] = [
     id: "api-requests",
     type: NavGroupType.DEVELOPER,
     title: "API Requests",
-    href: "/developer/requests",
+    href: RouteName.API_REQUESTS,
     icon: "mdi:api",
     visible: true,
   },
-
-  // AFFILIATE
   {
     id: "resellers",
     type: NavGroupType.AFFILIATE,
     title: "Resellers Statistics",
-    href: "/affiliate/resellers",
+    href: RouteName.RESELLERS,
     icon: "mdi:chart-bar",
     visible: true,
   },
@@ -93,17 +86,15 @@ export const NAV_ROUTES: NavItem[] = [
     id: "affiliate",
     type: NavGroupType.AFFILIATE,
     title: "Affiliate Program",
-    href: "/affiliate",
+    href: RouteName.AFFILIATE,
     icon: "mdi:account-multiple-outline",
     visible: true,
   },
-
-  // SUPPORT
   {
     id: "billing",
     type: NavGroupType.SUPPORT,
     title: "Billing",
-    href: "/billing",
+    href: RouteName.BILLING,
     icon: "mdi:credit-card-outline",
     visible: true,
     endIcon: "mdi:menu-right",
@@ -112,7 +103,7 @@ export const NAV_ROUTES: NavItem[] = [
     id: "help",
     type: NavGroupType.SUPPORT,
     title: "Help",
-    href: "/help",
+    href: RouteName.HELP,
     icon: "mdi:help-circle-outline",
     visible: true,
     endIcon: "mdi:menu-right",

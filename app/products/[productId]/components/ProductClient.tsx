@@ -27,7 +27,7 @@ export function ProductClient({ product }: { product: Product }) {
 
   return (
     <Form {...form}>
-      <div className="lg:flex-rowjustify-center flex min-h-screen flex-col">
+      <div className="lg:flex-rowjustify-center flex flex-col">
         <div className="flex w-full flex-col gap-6 lg:flex-row">
           <ContentWrapper className="h-fit! flex-1">
             <ProductHeader

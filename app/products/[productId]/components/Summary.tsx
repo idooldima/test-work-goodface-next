@@ -38,22 +38,13 @@ export function Summary({ product }: { product: Product }) {
               Manager
             </span>
           </div>
-          <div className="flex justify-between">
-            <span className="text-grey-600 subtitle2 font-medium">Quantity of IP</span>
-            <span className="subtitle2">{quantity} IPs</span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-grey-600 subtitle2 font-medium">Location</span>
-            <span className="subtitle2">{country?.label}</span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-grey-600 subtitle2 font-medium">Price per IP</span>
-            <span className="subtitle2">${pricePerIp.toFixed(2)}</span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-grey-600 subtitle2 font-medium">Subscription period</span>
-            <span className="subtitle2">{period?.label}</span>
-          </div>
+          <SummaryRow label="Quantity of IP" value={`${quantity} IPs`} />
+
+          <SummaryRow label="Location" value={String(country?.label)} />
+
+          <SummaryRow label="Price per IP" value={`$${pricePerIp.toFixed(2)}`} />
+
+          <SummaryRow label="Subscription period" value={String(period?.label)} />
         </ContentBox>
         <ContentBox className="mb-4! flex gap-2">
           <BaseInput className="h-7" />{" "}
@@ -78,22 +69,19 @@ export function Summary({ product }: { product: Product }) {
 
 export function WalletSection() {
   return (
-    <div className="flex justify-center gap-2">
-      <div>
-        <Icon icon="mdi:card-bulleted-outline" className="text-muted-foreground size-6" />
-      </div>
-      <div>
-        <Icon icon="mdi:card-bulleted-outline" className="text-muted-foreground size-6" />
-      </div>
-      <div>
-        <Icon icon="mdi:card-bulleted-outline" className="text-muted-foreground size-6" />
-      </div>
-      <div>
-        <Icon icon="mdi:card-bulleted-outline" className="text-muted-foreground size-6" />
-      </div>
-      <div>
-        <Icon icon="mdi:card-bulleted-outline" className="text-muted-foreground size-6" />
-      </div>
+    <div className="text-muted-foreground flex justify-center gap-3">
+      {Array.from({ length: 5 }).map((_, i) => (
+        <Icon key={i} icon="mdi:card-bulleted-outline" className="size-6" />
+      ))}
+    </div>
+  );
+}
+
+function SummaryRow({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="flex justify-between">
+      <span className="subtitle2 text-grey-600 font-medium">{label}</span>
+      <span className="subtitle2">{value}</span>
     </div>
   );
 }
