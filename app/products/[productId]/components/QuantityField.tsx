@@ -26,6 +26,11 @@ export function QuantityField({ name }: { name: string }) {
               </div>
 
               <div className="lslsldsldsl">dsdasda dddddsdsda</div>
+              <div className="lslsldsldsl">dsdasda dddddsdsda</div>
+              <div className="lslsldsldsl">dsdasda dddddsdsda</div>
+              <div className="lslsldsldsl">dsdasda dddddsdsda</div>
+              <div className="lslsldsldsl">dsdasda dddddsdsda</div>
+              <div className="lslsldsldsl">dsdasda dddddsdsda</div>
 
               <FormControl>
                 <Slider
