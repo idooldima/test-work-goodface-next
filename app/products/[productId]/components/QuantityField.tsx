@@ -13,7 +13,7 @@ export function QuantityField({ name }: { name: string }) {
         return (
           <FormItem className="space-y-4">
             {/* Tooltip */}
-            <div className="relative pt-6">
+            <div className="relative pt-[40px]">
               <div
                 className="absolute -top-5 translate-x-[-50%]"
                 style={{
@@ -24,6 +24,8 @@ export function QuantityField({ name }: { name: string }) {
                   {field.value} IP
                 </p>
               </div>
+
+              <div className="lslsldsldsl">dsdasda dddddsdsda</div>
 
               <FormControl>
                 <Slider
