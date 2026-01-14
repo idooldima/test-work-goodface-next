@@ -25,6 +25,8 @@ export function QuantityField({ name }: { name: string }) {
                 </p>
               </div>
 
+              <div className="lslsldsldsl">dsdasda dddddsdsda</div>
+
               <FormControl>
                 <Slider
                   value={[index]}
